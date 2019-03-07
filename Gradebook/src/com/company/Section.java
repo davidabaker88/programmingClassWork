@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public class Section {
     //list of students
     ArrayList<Student> students;
+    String sectionName;
+
 
 
 
