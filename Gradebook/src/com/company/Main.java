@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Gradebook gradebook = new Gradebook();
 	    //set up optionsArray
-        String[] options = new String[14];
+        String[] options = new String [14];
         options[0] = "change section";
         options[1] = "add section";
         options[2] = "add student";
