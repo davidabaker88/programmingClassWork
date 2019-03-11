@@ -32,7 +32,7 @@ public class Gradebook {
     }
 
     //creates a new section if there are not already 6 sections
-    // and sectionName is not already used
+    // and sectionName is not already used , also need to set the currentSection to be the new section
     // Returns: true if it succeeds false if it fails.
     public boolean addSection(String sectionName){
         String oldSection = currentSectionName;
