@@ -1,0 +1,102 @@
+--Test cases--
+o:Type one of the following commands:
+o:change section
+o:add section
+o:add student
+o:add assignment to student
+o:add assignment to section
+o:set score
+o:mark tardy
+o:mark absent
+o:get overall score
+o:get overall score avg
+o:get assignment score
+o:get assignment score avg
+o:get tardy count
+o:get absent count
+
+/////testing add student before section to make sure program properly handles the case where there are no sections created and a different operation is called.
+i:add student
+o:enter student first name
+i:bob
+o:enter student last name
+i:joe
+o:enter student username
+i:bobjoe
+o:enter a phone number including area code as a 10 digit number
+i:1231231234
+o:There was an error with the command, operation not completed
+//should not create add a student because there are no sections added yet
+
+o:Type one of the following commands:\nchange section\nadd section\nadd student\nadd assignment to student\nadd assignment to section\nset score\nmark tardy\nmark absent\nget overall score\nget overall score avg\nget assignment score\nget assignment score avg\nget tardy count\nget absent count
+
+/////testing to make sure the gradebook can add sections
+i:add section
+o:Enter a section name
+i:am
+o:action completed successfully
+//should see the section created in gradebook with the name am but no students added. Current section should show "am" is active
+
+o:Type one of the following commands:\nchange section\nadd section\nadd student\nadd assignment to student\nadd assignment to section\nset score\nmark tardy\nmark absent\nget overall score\nget overall score avg\nget assignment score\nget assignment score avg\nget tardy count\nget absent count
+
+/////testing to make sure it doesnt allow you to add a section if there is already one with that sectionName
+i:add section
+o:Enter a section name
+i:am
+o:There was an error with the command, operation not completed
+//should not be added because there is already a section with that name in the gradebook
+
+o:Type one of the following commands:\nchange section\nadd section\nadd student\nadd assignment to student\nadd assignment to section\nset score\nmark tardy\nmark absent\nget overall score\nget overall score avg\nget assignment score\nget assignment score avg\nget tardy count\nget absent count
+
+///testing to make sure that the grade book can add more than one section
+i:add section
+o:Enter a section name
+i:pm
+o:action completed successfully
+//should see the section created in gradebook with the name pm but no students added. pm is currentSection
+
+
+o:Type one of the following commands:\nchange section\nadd section\nadd student\nadd assignment to student\nadd assignment to section\nset score\nmark tardy\nmark absent\nget overall score\nget overall score avg\nget assignment score\nget assignment score avg\nget tardy count\nget absent count
+
+/////testing to make sure a student can be created and added to the active section
+i:add student
+o:Enter student first name
+i:david
+o:Enter student last name
+i:baker
+o:Enter student username
+i:davidbaker
+o:Enter student phone number
+i:1231231234
+o:action completed successfully
+//should see student is created and added to the pm section and the student should have the information specified absent/tardycount should be 0 and have 0 assignments assigned.
+
+o:Type one of the following commands:\nchange section\nadd section\nadd student\nadd assignment to student\nadd assignment to section\nset score\nmark tardy\nmark absent\nget overall score\nget overall score avg\nget assignment score\nget assignment score avg\nget tardy count\nget absent count
+
+/////testing to make sure a second student can be created and added to the active section
+i:add student
+o:Enter student first name
+i:david
+o:Enter student last name
+i:baker
+o:Enter student username
+i:davidbaker1
+o:Enter student phone number
+i:1231231234
+o:action completed successfully
+//should see student is created and added to the pm section and the student should have the information specified
+
+o:Type one of the following commands:\nchange section\nadd section\nadd student\nadd assignment to student\nadd assignment to section\nset score\nmark tardy\nmark absent\nget overall score\nget overall score avg\nget assignment score\nget assignment score avg\nget tardy count\nget absent count
+
+/////testing to make sure a student can be created and added to the active section
+i:add student
+o:Enter student first name
+i:bob
+o:Enter student last name
+i:joe
+o:Enter student username
+i:bob1
+o:Enter student phone number
+i:9879879876
+o:action completed successfully
+//should see student is created and added to the pm section and the student should have the information specified
